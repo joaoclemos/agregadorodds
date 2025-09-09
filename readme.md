@@ -1,0 +1,1 @@
+guide for developers odds agregator: https://sportsdata.io/developers
