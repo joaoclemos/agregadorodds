@@ -1,94 +1,121 @@
-/* Paleta de Cores - Tema Claro CHECK odds */
+/* ==========================================================================
+   CONFIGURAÇÕES GLOBAIS E PALETA DE CORES (VARIÁVEIS)
+   ========================================================================== */
+
+/* O seletor :root permite criar variáveis CSS. 
+  Isso é útil para que possamos reutilizar as mesmas cores em vários lugares.
+  Se quisermos mudar uma cor no site inteiro, só precisamos mudar em um lugar.
+*/
 :root {
+    /* Paleta de Cores Verde (da sua marca) */
     --primary-green: #1B5E20;      /* Verde escuro para textos e destaques importantes */
     --action-green: #22c55e;        /* Verde mais vibrante para botões e ações */
     --action-green-gradient: linear-gradient(135deg, #4ade80, #22c55e); /* Gradiente para botões */
     
-    --background-body: #f4f7f6;     /* Fundo principal do site (cinza bem claro) */
-    --background-card: #ffffff;     /* Fundo branco para os cards e seções */
-    --background-element: #eeeeee;  /* Fundo para elementos como a barra de busca */
+    /* Paleta de Cores Neutras (para o tema claro) */
+    --background-body: #f4f7f6;     /* Fundo principal do site (cinza bem claro, para não cansar a vista) */
+    --background-card: #ffffff;     /* Fundo branco puro para os cards e seções, para dar contraste */
+    --background-element: #eeeeee;  /* Fundo para elementos menores, como a barra de busca */
 
-    --text-primary: #212121;       /* Cor de texto principal (quase preto) */
-    --text-secondary: #5f6368;     /* Cor de texto secundário */
-    --text-light: #ffffff;         /* Texto sobre fundos coloridos */
+    /* Paleta de Cores de Texto */
+    --text-primary: #212121;       /* Cor de texto principal (quase preto, mais suave que #000) */
+    --text-secondary: #5f6368;     /* Cor de texto secundário (para informações menos importantes) */
+    --text-light: #ffffff;         /* Texto branco para usar sobre fundos coloridos/escuros */
     
-    --border-color: #e0e0e0;       /* Cor das bordas e linhas divisórias */
+    /* Paleta de Bordas */
+    --border-color: #e0e0e0;       /* Cor cinza clara para as bordas e linhas divisórias */
 }
 
-/* --- ESTILOS GERAIS --- */
+/* ==========================================================================
+   RESET E ESTILOS GERAIS DO BODY
+   ========================================================================== */
+
+/* O seletor universal (*) aplica estas regras a TODOS os elementos da página.
+  É um "reset" para garantir que todos os navegadores comecem com a mesma base.
+*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Remove todas as margens externas */
+    padding: 0; /* Remove todos os preenchimentos internos */
+    box-sizing: border-box; /* Garante que o padding e a borda não aumentem o tamanho final do elemento */
 }
 
+/* Estilização principal do corpo da página */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--background-body);
-    color: var(--text-primary);
-    min-height: 100vh;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a família de fontes para o site */
+    background-color: var(--background-body); /* Usa a variável de cor de fundo que definimos */
+    color: var(--text-primary); /* Define a cor de texto padrão */
+    min-height: 100vh; /* Garante que o corpo da página ocupe no mínimo 100% da altura da tela */
+    line-height: 1.6; /* Define a altura da linha para melhor legibilidade */
 }
 
-/* --- HEADER --- */
+/* ==========================================================================
+   ESTILOS DO CABEÇALHO (HEADER)
+   ========================================================================== */
+
+/* Estiliza o container geral do cabeçalho */
 .header {
-    background: var(--background-card);
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    background: var(--background-card); /* Usa o branco dos cards como fundo */
+    border-bottom: 1px solid var(--border-color); /* Adiciona uma linha cinza clara na parte inferior */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Cria uma sombra sutil para dar profundidade */
 }
 
+/* A pequena barra no topo do cabeçalho */
 .header-top {
-    background: #f8f9fa;
-    padding: 8px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    border-bottom: 1px solid var(--border-color);
+    background: #f8f9fa; /* Um cinza ainda mais claro que o fundo principal */
+    padding: 8px 20px; /* Preenchimento interno (8px em cima/baixo, 20px dos lados) */
+    display: flex; /* Ativa o Flexbox para alinhar os itens */
+    justify-content: space-between; /* Coloca um item no início e outro no fim */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    font-size: 14px; /* Tamanho da fonte */
+    border-bottom: 1px solid var(--border-color); /* Linha divisória */
 }
 
 .header-info {
-    color: var(--text-secondary);
+    color: var(--text-secondary); /* Usa a cor de texto secundária */
 }
 
 .header-actions {
-    display: flex;
-    gap: 10px;
+    display: flex; /* Alinha os botões lado a lado */
+    gap: 10px; /* Cria um espaço de 10px entre os botões */
 }
 
+/* Estilo base para todos os botões */
 .btn {
-    padding: 6px 16px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 12px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
+    padding: 6px 16px; /* Preenchimento interno */
+    border: none; /* Remove a borda padrão */
+    border-radius: 6px; /* Arredonda os cantos */
+    font-weight: 600; /* Deixa a fonte em negrito */
+    cursor: pointer; /* Muda o cursor para uma "mãozinha" ao passar o mouse */
+    font-size: 12px; /* Tamanho da fonte */
+    text-transform: uppercase; /* Deixa o texto em maiúsculas */
+    transition: all 0.3s ease; /* Cria uma transição suave para todas as propriedades */
 }
 
+/* Estilo do botão primário (ENTRAR) */
 .btn-primary {
-    background: var(--action-green-gradient);
-    color: var(--text-light);
+    background: var(--action-green-gradient); /* Usa o gradiente verde */
+    color: var(--text-light); /* Texto branco */
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+    transform: translateY(-2px); /* Efeito de "levantar" o botão ao passar o mouse */
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3); /* Adiciona uma sombra verde */
 }
 
+/* Estilo do botão secundário (CADASTRAR) */
 .btn-secondary {
-    background: transparent;
-    border: 2px solid var(--primary-green);
-    color: var(--primary-green);
+    background: transparent; /* Fundo transparente */
+    border: 2px solid var(--primary-green); /* Borda verde escura */
+    color: var(--primary-green); /* Texto verde escuro */
 }
 
 .btn-secondary:hover {
-    background: var(--primary-green);
-    color: var(--text-light);
-    transform: translateY(-2px);
+    background: var(--primary-green); /* Ao passar o mouse, o fundo fica verde */
+    color: var(--text-light); /* E o texto fica branco */
+    transform: translateY(-2px); /* Efeito de "levantar" */
 }
 
+/* A parte principal do cabeçalho com logo, navegação e busca */
 .header-main {
     padding: 15px 20px;
     display: flex;
@@ -96,48 +123,54 @@ body {
     gap: 30px;
 }
 
+/* Estilo da imagem da LOGO */
 .logo-img {
-    height: 40px;
-    width: auto;
+    height: 75px; /* MUDANÇA PRINCIPAL: Logo bem maior agora */
+    width: auto;  /* A largura se ajusta automaticamente para manter a proporção */
 }
 
+/* Navegação principal */
 .main-nav {
     display: flex;
     gap: 30px;
 }
 
+/* Estilo dos links de navegação */
 .nav-link {
     color: var(--text-secondary);
-    text-decoration: none;
+    text-decoration: none; /* Remove o sublinhado */
     font-weight: 500;
     padding: 8px 0;
-    position: relative;
+    position: relative; /* Necessário para o sublinhado animado abaixo */
     transition: color 0.3s ease;
 }
 
+/* Efeito ao passar o mouse ou quando o link está ativo */
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-green);
+    color: var(--primary-green); /* O texto do link fica verde */
 }
 
+/* O sublinhado que aparece no link ativo */
 .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
+    content: ''; /* Pseudo-elementos precisam de 'content' */
+    position: absolute; /* Posição absoluta em relação ao .nav-link */
+    bottom: -15px; /* Posiciona o sublinhado 15px abaixo do link */
     left: 0;
-    width: 100%;
-    height: 3px;
-    background: var(--action-green-gradient);
+    width: 100%; /* Largura total do link */
+    height: 3px; /* Altura do sublinhado */
+    background: var(--action-green-gradient); /* Usa o gradiente verde */
     border-radius: 2px;
 }
 
+/* Barra de busca */
 .search-bar {
-    flex: 1;
+    flex: 1; /* Faz a barra ocupar o espaço disponível */
     max-width: 400px;
     display: flex;
     background: var(--background-element);
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden; /* Garante que os cantos do botão de busca fiquem arredondados */
     border: 1px solid var(--border-color);
 }
 
@@ -147,7 +180,7 @@ body {
     background: transparent;
     border: none;
     color: var(--text-primary);
-    outline: none;
+    outline: none; /* Remove a borda azul que aparece ao clicar */
 }
 
 .search-bar input::placeholder {
@@ -183,6 +216,7 @@ body {
     color: var(--primary-green);
 }
 
+/* A barra de navegação secundária, abaixo da principal */
 .header-nav {
     background: #f8f9fa;
     padding: 0 20px;
@@ -192,30 +226,35 @@ body {
 .secondary-nav {
     display: flex;
     gap: 30px;
-    overflow-x: auto;
+    overflow-x: auto; /* Permite rolar horizontalmente em telas pequenas */
 }
 
 .secondary-nav .nav-link {
-    white-space: nowrap;
+    white-space: nowrap; /* Impede que os textos quebrem linha */
     padding: 15px 0;
     font-size: 14px;
 }
 
-/* --- ESTRUTURA PRINCIPAL --- */
+/* ==========================================================================
+   ESTRUTURA PRINCIPAL (CONTAINER, SIDEBAR, CONTEÚDO)
+   ========================================================================== */
+
+/* O container que segura a sidebar e o conteúdo principal */
 .container {
-    display: flex;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
-    gap: 20px;
+    display: flex; /* Coloca a sidebar e o conteúdo lado a lado */
+    max-width: 1600px; /* A largura máxima que o conteúdo pode ter */
+    margin: 0 auto; /* Truque para centralizar o container na tela */
+    padding: 20px; /* Espaçamento interno */
+    gap: 20px; /* Espaço entre a sidebar e o conteúdo */
 }
 
-/* --- SIDEBAR --- */
+/* A barra lateral esquerda */
 .sidebar {
-    width: 300px;
-    flex-shrink: 0;
+    width: 300px; /* Largura fixa */
+    flex-shrink: 0; /* Impede que a sidebar encolha */
 }
 
+/* Estilo base para os cards da sidebar */
 .my-leagues, .sports-menu {
     background: var(--background-card);
     border-radius: 12px;
@@ -224,6 +263,7 @@ body {
     border: 1px solid var(--border-color);
 }
 
+/* Cabeçalho das seções (ex: MINHAS LIGAS) */
 .section-header {
     display: flex;
     align-items: center;
@@ -232,6 +272,7 @@ body {
     font-weight: 600;
 }
 
+/* A "bolinha" com o número */
 .badge {
     background: var(--action-green);
     color: var(--text-light);
@@ -247,11 +288,13 @@ body {
     font-size: 14px;
 }
 
+/* Card do menu de esportes */
 .sports-menu {
-    padding: 0;
-    overflow: hidden;
+    padding: 0; /* Remove o padding para os itens irem de ponta a ponta */
+    overflow: hidden; /* Garante que os cantos arredondados funcionem */
 }
 
+/* Cada item do menu de esporte */
 .sport-item {
     display: flex;
     align-items: center;
@@ -263,13 +306,14 @@ body {
 }
 
 .sport-item:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Remove a borda do último item */
 }
 
 .sport-item:hover {
-    background: #f1f3f5;
+    background: #f1f3f5; /* Efeito de hover sutil */
 }
 
+/* Estilo do item de esporte ativo */
 .sport-item.active {
     background: var(--action-green-gradient);
     color: var(--text-light);
@@ -278,34 +322,40 @@ body {
 .sport-item i {
     font-size: 16px;
     width: 20px;
+    text-align: center;
 }
 
 .sport-item span {
-    flex: 1;
+    flex: 1; /* Ocupa o espaço disponível */
     font-weight: 500;
     font-size: 14px;
 }
 
 .toggle-icon {
-    color: #94a3b8;
+    color: #94a3b8; /* Cor da setinha para baixo */
 }
 .sport-item.active .toggle-icon {
-    color: var(--text-light);
+    color: var(--text-light); /* Cor da setinha quando o item está ativo */
 }
 
-/* --- CONTEÚDO PRINCIPAL --- */
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL (MAIN CONTENT)
+   ========================================================================== */
+
+/* A coluna de conteúdo da direita */
 .main-content {
-    flex: 1;
+    flex: 1; /* Faz a coluna ocupar todo o espaço restante */
 }
 
-/* Seção de Promoções */
+/* Seção dos cards de promoção */
 .promo-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: grid; /* Usa o sistema de grid do CSS */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cria colunas responsivas */
     gap: 20px;
     margin-bottom: 30px;
 }
 
+/* Estilo base para os cards de promoção */
 .promo-card {
     background: var(--background-card);
     border-radius: 12px;
@@ -315,22 +365,22 @@ body {
 }
 
 .promo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transform: translateY(-5px); /* Efeito de flutuar */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Sombra mais forte */
 }
 
-/* Cores das promoções mantidas para representar as marcas */
+/* Cores específicas para os cards de promoção, para representar as marcas */
 .promo-card.f12 { background: linear-gradient(135deg, #4ade80, #22c55e); color: white; }
 .promo-card.java { background: linear-gradient(135deg, #06b6d4, #0891b2); color: white; }
 .promo-card.bet365 { background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; }
-.promo-card.f12 *, .promo-card.java *, .promo-card.bet365 * { color: white; }
+.promo-card.f12 *, .promo-card.java *, .promo-card.bet365 * { color: white; } /* Força a cor branca em todos os filhos */
 
 
 .promo-header, .promo-content, .promo-logo, .promo-label, .promo-text {
-    color: inherit; /* Herda a cor do card (importante para os coloridos) */
+    color: inherit; /* Herda a cor do card pai (importante para os cards coloridos) */
 }
 
-/* Meu Bilhete */
+/* Seções principais como "Meu Bilhete", "Partidas" etc. */
 .my-ticket, .matches-section, .main-events, .upcoming-matches {
     background: var(--background-card);
     border-radius: 12px;
@@ -360,7 +410,7 @@ body {
     font-size: 14px;
 }
 
-/* Seção de Partidas */
+/* Abas como "Partidas quentes" */
 .section-tabs {
     display: flex;
     gap: 20px;
@@ -386,7 +436,7 @@ body {
 .tab-btn.active::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -1px; /* Posiciona a linha exatamente sobre a borda da seção */
     left: 0;
     width: 100%;
     height: 3px;
@@ -394,6 +444,7 @@ body {
     border-radius: 2px;
 }
 
+/* Card de uma partida específica */
 .match-card {
     display: flex;
     justify-content: space-between;
@@ -407,15 +458,17 @@ body {
 }
 
 .match-card:hover {
-    border-color: var(--primary-green);
-    transform: translateX(5px);
+    border-color: var(--primary-green); /* Borda fica verde ao passar o mouse */
+    transform: translateX(5px); /* Leve deslocamento para a direita */
 }
 
+/* Estilos de texto dentro do card da partida */
 .league-info { color: var(--text-secondary); }
 .teams { font-weight: 600; font-size: 16px; }
 .vs { color: var(--text-secondary); margin: 0 10px; }
 .match-time { font-size: 12px; color: var(--text-secondary); text-align: center; }
 
+/* Rótulo "1", "X", "2" */
 .outcome {
     display: block;
     font-weight: 600;
@@ -423,7 +476,7 @@ body {
     color: var(--primary-green);
 }
 
-/* Cores das odds mantidas */
+/* Cores específicas para as odds, representando as casas de apostas */
 .odd.sportingbet { background: #dc2626; color: white; }
 .odd.betano { background: #f97316; color: white; }
 .odd.betmgm { background: #7c3aed; color: white; }
@@ -431,7 +484,7 @@ body {
 .odd.superbet { background: #ef4444; color: white; }
 
 .odd:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Efeito de zoom */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -441,7 +494,7 @@ body {
     font-weight: 500;
 }
 
-/* Eventos Principais */
+/* Botões de filtro na seção de eventos */
 .filter-btn {
     background: var(--background-element);
     border: 1px solid var(--border-color);
@@ -481,7 +534,7 @@ body {
 .event-item i { color: var(--primary-green); }
 
 
-/* Partidas Futuras */
+/* Seção de Próximas Partidas */
 .upcoming-match {
     background: #f8f9fa;
     border: 1px solid var(--border-color);
@@ -490,13 +543,43 @@ body {
 .odds-preview .odd { background: var(--action-green); }
 .more-odds { background: var(--text-secondary); }
 
-/* --- SEÇÕES RESTANTES (NÃO MUDAM) --- */
-.match-info, .odds-section, .odds-group, .odds-values, .odd, .view-all, .main-events .section-header, .sport-filters, .events-grid, .upcoming-match .match-info, .upcoming-match .odds-preview {
-    /* Herdam as cores de texto e fundo já definidas */
-    /* Estrutura não precisa de alteração */
+
+/* ==========================================================================
+   DESIGN RESPONSIVO (Ajustes para telas menores)
+   ========================================================================== */
+
+/* Para tablets e telas menores */
+@media (max-width: 1024px) { 
+    .container { flex-direction: column; } 
+    .sidebar { width: 100%; order: 2; } 
+    .main-content { order: 1; } 
+    .promo-section { grid-template-columns: 1fr; } 
 }
 
-/* Demais estilos responsivos permanecem os mesmos */
-@media (max-width: 1024px) { .container { flex-direction: column; } .sidebar { width: 100%; order: 2; } .main-content { order: 1; } .promo-section { grid-template-columns: 1fr; } }
-@media (max-width: 768px) { .header-main { flex-wrap: wrap; gap: 15px; } .main-nav { order: 3; width: 100%; justify-content: center; } .search-bar { max-width: 100%; } .match-card { flex-direction: column; gap: 15px; text-align: center; } .odds-section { justify-content: center; } .sport-filters { justify-content: center; } .events-grid { grid-template-columns: 1fr; } }
-@media (max-width: 480px) { .container { padding: 10px; } .header-main { padding: 10px; } .secondary-nav { gap: 15px; } .odds-section { gap: 10px; } .odds-values { flex-direction: row; gap: 5px; } .odd { padding: 6px 8px; font-size: 12px; } }
+/* Para celulares */
+@media (max-width: 768px) { 
+    .header-main { flex-wrap: wrap; gap: 15px; } 
+    .main-nav { order: 3; width: 100%; justify-content: center; } 
+    .search-bar { max-width: 100%; } 
+    .match-card { flex-direction: column; gap: 15px; text-align: center; } 
+    .odds-section { justify-content: center; } 
+    .sport-filters { justify-content: center; } 
+    .events-grid { grid-template-columns: 1fr; } 
+}
+
+/* Para celulares bem pequenos */
+@media (max-width: 480px) { 
+    .container { padding: 10px; } 
+    .header-main { padding: 10px; } 
+    .secondary-nav { gap: 15px; } 
+    .odds-section { gap: 10px; } 
+    .odds-values { flex-direction: row; gap: 5px; } 
+    .odd { padding: 6px 8px; font-size: 12px; } 
+}
+
+/* --- SEÇÕES NÃO UTILIZADAS NO LAYOUT ATUAL (Mantidas para referência) --- */
+.match-info, .odds-section, .odds-group, .odds-values, .odd, .view-all, .main-events .section-header, .sport-filters, .events-grid, .upcoming-match .match-info, .upcoming-match .odds-preview {
+    /* Estas regras estão aqui mais para referência. 
+      A maioria dos estilos delas já foi definida em seletores mais específicos acima.
+    */
+}
