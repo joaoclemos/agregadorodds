@@ -1,9 +1,13 @@
+# backend/criar_banco.py
+
 import sqlite3
+import os
 
-# O nome do arquivo do nosso banco de dados
-DB_NAME = "checkodds.db"
+# Define a estrutura de pastas e o nome do arquivo
+DB_FOLDER = os.path.join("backend", "database")
+DB_NAME = os.path.join(DB_FOLDER, "checkodds.db")
 
-# SQL para criar as tabelas. O "IF NOT EXISTS" garante que não teremos erro se o script for executado mais de uma vez.
+# SQL para criar as tabelas
 SQL_CREATE_TABLES = [
     """
     CREATE TABLE IF NOT EXISTS bookmakers (
@@ -37,32 +41,26 @@ SQL_CREATE_TABLES = [
 ]
 
 def create_database():
-    """
-    Cria o arquivo do banco de dados e as tabelas necessárias.
-    """
+    """Cria a estrutura de pastas e o banco de dados com as tabelas."""
     try:
-        # sqlite3.connect() cria o arquivo do banco de dados se ele não existir
+        os.makedirs(DB_FOLDER, exist_ok=True)
+        
         conn = sqlite3.connect(DB_NAME)
         cursor = conn.cursor()
-        print(f"Banco de dados '{DB_NAME}' conectado com sucesso.")
+        print(f"Banco de dados '{DB_NAME}' conectado/criado com sucesso.")
 
-        # Executa cada um dos comandos SQL para criar as tabelas
         for sql_command in SQL_CREATE_TABLES:
             cursor.execute(sql_command)
         
-        print("Tabelas 'bookmakers', 'events' e 'odds' verificadas/criadas com sucesso!")
-
-        # conn.commit() salva as alterações
+        print("Tabelas verificadas/criadas com sucesso!")
         conn.commit()
 
     except sqlite3.Error as e:
-        print(f"Ocorreu um erro ao criar o banco de dados: {e}")
+        print(f"Ocorreu um erro: {e}")
     finally:
-        # conn.close() fecha a conexão com o banco de dados
         if conn:
             conn.close()
             print("Conexão com o banco de dados fechada.")
 
-# Esta parte do código só será executada quando você rodar o script diretamente
 if __name__ == "__main__":
     create_database()
