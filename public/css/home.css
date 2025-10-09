@@ -1,129 +1,30 @@
-/* Paleta de Cores - Tema Claro CHECK odds */
-:root {
-    --primary-green: #1B5E20;      
-    --action-green: #22c55e;        
-    --action-green-gradient: linear-gradient(135deg, #4ade80, #22c55e); 
-    --background-body: #f4f7f6;     
-    --background-card: #ffffff;     
-    --background-element: #eeeeee;  
-    --text-primary: #212121;       
-    --text-secondary: #5f6368;     
-    --text-light: #ffffff;         
-    --border-color: #e0e0e0;       
-}
-
-/* --- ESTILOS GERAIS --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--background-body);
-    color: var(--text-primary);
-    min-height: 100vh;
-    line-height: 1.6;
-}
-
-/* --- HEADER --- */
-.header {
-    background: var(--background-card);
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.header-main {
+/* --- ESTILOS PARA A LISTA DE JOGOS --- */
+.game-card {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 10px 20px;
-}
-
-.logo-img {
-    height: 75px; 
-    width: auto;
-}
-
-.main-nav {
-    display: flex;
-    gap: 25px;
-}
-
-.nav-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 8px 4px;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--primary-green);
-}
-
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: var(--action-green-gradient);
-    border-radius: 2px;
-}
-
-.search-bar {
-    margin-left: auto; /* Empurra a barra de busca para a direita */
-    display: flex;
-    width: 300px;
-    background: var(--background-element);
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #f8f9fa;
     border-radius: 8px;
-    overflow: hidden;
     border: 1px solid var(--border-color);
+    font-size: 1.1em;
 }
 
-.search-bar input {
-    flex: 1;
-    padding: 10px 14px;
-    background: transparent;
-    border: none;
-    color: var(--text-primary);
-    outline: none;
-}
-
-.search-bar input::placeholder {
+.game-league {
+    font-size: 0.8em;
     color: var(--text-secondary);
 }
 
-.search-btn {
-    padding: 10px 14px;
-    background: var(--action-green);
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s ease;
+.game-teams {
+    font-weight: 600;
 }
 
-.search-btn:hover {
-    background: var(--primary-green);
+.team-name {
+    margin: 0 10px;
 }
 
-/* --- CONTEÚDO PRINCIPAL --- */
-.container {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 25px 20px;
-}
-
-.main-content h1 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 15px;
+.vs {
+    color: var(--primary-green);
+    font-weight: bold;
 }
