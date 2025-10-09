@@ -4,325 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHECK odds - Comparativo de Odds</title>
-    <link rel="stylesheet" href="/public/css/home.css">
+    <link rel="stylesheet" href="../css/home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <div class="header-top">
-            <div class="header-info">
-                <span>Formatos de odds: Probabilidades Decimais</span>
-            </div>
-            <div class="header-actions">
-                <button class="btn btn-primary">ENTRAR</button>
-                <button class="btn btn-secondary">CADASTRAR</button>
-            </div>
-        </div>
-        
         <div class="header-main">
             <div class="logo">
-                <img src="/public/fotos/verde claro.png" alt="CHECK odds Logo" class="logo-img">
+                <img src="../fotos/check_odds_logo.png" alt="CHECK odds Logo" class="logo-img">
             </div>
-            
             <nav class="main-nav">
-                <a href="#" class="nav-link">COMPARATIVO DE ODDS</a>
-                <a href="#" class="nav-link active">COMUNIDADE</a>
-                <a href="#" class="nav-link">CASAS DE APOSTAS</a>
+                <a href="#" class="nav-link active">Jogos do Dia</a>
+                <a href="#" class="nav-link">Ligas Populares</a>
+                <a href="#" class="nav-link">Apostas de Valor</a>
             </nav>
-            
             <div class="search-bar">
-                <input type="text" placeholder="Pesquisar (equipe/jogad...">
-                <button class="search-btn">
-                    <i class="fas fa-search"></i>
-                </button>
+                <input type="text" placeholder="Pesquisar time ou campeonato...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
-            
-            <div class="header-icons">
-                <i class="fas fa-bell"></i>
-                <i class="fas fa-user"></i>
-            </div>
-        </div>
-        
-        <div class="header-nav">
-            <nav class="secondary-nav">
-                <a href="#" class="nav-link active">PÁGINA INICIAL</a>
-                <a href="#" class="nav-link">PRÓXIMAS PARTIDAS</a>
-                <a href="#" class="nav-link">ODDS EM QUEDA</a>
-                <a href="#" class="nav-link">APOSTAS SEGURAS</a>
-                <a href="#" class="nav-link">ODDS AO VIVO</a>
-                <a href="#" class="nav-link">TODOS OS EVENTOS</a>
-                <a href="#" class="nav-link">FERRAMENTAS DE APOSTAS <i class="fas fa-chevron-down"></i></a>
-            </nav>
         </div>
     </header>
 
     <div class="container">
-        <aside class="sidebar">
-            <div class="my-leagues">
-                <div class="section-header">
-                    <i class="fas fa-star"></i>
-                    <span>MINHAS LIGAS</span>
-                    <span class="badge">0</span>
-                </div>
-                <div class="action-link">
-                    <a href="#">Gerenciar minhas ligas</a>
-                </div>
-            </div>
-            
-            <div class="sports-menu">
-                <div class="sport-item active">
-                    <i class="fas fa-futbol"></i>
-                    <span>FUTEBOL</span>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-                <div class="sport-item">
-                    <i class="fas fa-basketball-ball"></i>
-                    <span>BASQUETE</span>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-                <div class="sport-item">
-                    <i class="fas fa-tennis-ball"></i>
-                    <span>TÊNIS</span>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-                <div class="sport-item">
-                    <i class="fas fa-volleyball-ball"></i>
-                    <span>VÔLEI</span>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-                <div class="sport-item">
-                    <i class="fas fa-fist-raised"></i>
-                    <span>MMA</span>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-                <div class="sport-item">
-                    <i class="fas fa-football-ball"></i>
-                    <span>FUTEBOL AMERICANO</span>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-                <div class="sport-item">
-                    <i class="fas fa-gamepad"></i>
-                    <span>ESPORTS</span>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-            </div>
-        </aside>
-
         <main class="main-content">
-            <div class="promo-section">
-                <div class="promo-card f12">
-                    <div class="promo-header">
-                        <span class="promo-logo">F12</span>
-                        <i class="fas fa-chevron-up"></i>
-                    </div>
-                    <div class="promo-content">
-                        <span class="promo-label">SUPER ODDS</span>
-                        <button class="promo-btn">REIVIND</button>
-                    </div>
-                </div>
-                
-                <div class="promo-card java">
-                    <div class="promo-header">
-                        <span class="promo-logo">JAVA</span>
-                        <i class="fas fa-chevron-up"></i>
-                    </div>
-                    <div class="promo-content">
-                        <span class="promo-label">FREE BET SEMANAL</span>
-                        <button class="promo-btn">REIVIND</button>
-                        <small>18+ Jogue com responsabilidade</small>
-                    </div>
-                </div>
-                
-                <div class="promo-card bet365">
-                    <div class="promo-header">
-                        <span class="promo-logo">bet365</span>
-                        <i class="fas fa-chevron-up"></i>
-                    </div>
-                    <div class="promo-content">
-                        <span class="promo-text">Super odds - odds aumentadas todos os dias</span>
-                        <button class="promo-btn">REIVIND</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="my-ticket">
-                <div class="ticket-header">
-                    <i class="fas fa-ticket-alt"></i>
-                    <span>MEU BILHETE</span>
-                    <span class="badge">0</span>
-                </div>
-                <div class="ticket-content">
-                    <p>Nenhuma aposta selecionada ainda. Para adicionar uma aposta, clique nas odds enquanto navega no CHECK odds!</p>
-                    <a href="#" class="login-link">Faça login para salvar e compartilhar seus cupons.</a>
-                </div>
-            </div>
-
-            <div class="matches-section">
-                <div class="section-tabs">
-                    <button class="tab-btn active">Partidas quentes</button>
-                    <button class="tab-btn">Previsões principais do usuário</button>
-                </div>
-                
-                <div class="match-card">
-                    <div class="match-info">
-                        <img src="https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Football" class="match-image">
-                        <div class="match-details">
-                            <div class="league-info">
-                                <i class="fas fa-futbol"></i>
-                                <span>Futebol / 🌍 Mundo / Copa do Mundo 2026</span>
-                            </div>
-                            <div class="teams">
-                                <span class="team">🇦🇿 Azerbaijão</span>
-                                <span class="vs">VS</span>
-                                <span class="team">🇺🇦 Ucrânia</span>
-                            </div>
-                            <div class="match-time">
-                                Hoje<br>13:00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="odds-section">
-                        <div class="odds-group">
-                            <span class="outcome">1</span>
-                            <div class="odds-values">
-                                <span class="odd sportingbet">9.50</span>
-                                <span class="odd betano">4.85</span>
-                                <span class="odd betano">1.42</span>
-                            </div>
-                        </div>
-                        <div class="odds-group">
-                            <span class="outcome">X</span>
-                            <div class="odds-values">
-                                <span class="odd betmgm">4.60</span>
-                                <span class="odd betraciona">3.52</span>
-                                <span class="odd superbet">1.95</span>
-                            </div>
-                        </div>
-                        <div class="odds-group">
-                            <span class="outcome">2</span>
-                            <div class="odds-values">
-                                <span class="odd betano">7.80</span>
-                                <span class="odd betraciona">4.88</span>
-                                <span class="odd betano">1.45</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="match-card">
-                    <div class="match-info">
-                        <img src="https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Football" class="match-image">
-                        <div class="match-details">
-                            <div class="league-info">
-                                <i class="fas fa-futbol"></i>
-                                <span>Futebol / 🌍 Mundo / Copa do Mundo 2026</span>
-                            </div>
-                            <div class="teams">
-                                <span class="team">🇷🇸 Sérvia</span>
-                                <span class="vs">VS</span>
-                                <span class="team">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra</span>
-                            </div>
-                            <div class="match-time">
-                                Hoje<br>15:45
-                            </div>
-                        </div>
-                    </div>
-                    <div class="odds-section">
-                        <div class="odds-group">
-                            <span class="outcome">1</span>
-                            <div class="odds-values">
-                                <span class="odd betmgm">4.60</span>
-                                <span class="odd betraciona">3.52</span>
-                                <span class="odd superbet">1.95</span>
-                            </div>
-                        </div>
-                        <div class="odds-group">
-                            <span class="outcome">X</span>
-                            <div class="odds-values">
-                                <span class="odd betano">7.80</span>
-                                <span class="odd betraciona">4.88</span>
-                                <span class="odd betano">1.45</span>
-                            </div>
-                        </div>
-                        <div class="odds-group">
-                            <span class="outcome">2</span>
-                            <div class="odds-values">
-                                <span class="odd sportingbet">9.50</span>
-                                <span class="odd betano">4.85</span>
-                                <span class="odd betano">1.42</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="view-all">
-                    <a href="#" class="view-all-link">Todas as Partidas Quentes</a>
-                </div>
-            </div>
-
-            <div class="main-events">
-                <div class="section-header">
-                    <span>Eventos Principais</span>
-                    <div class="sport-filters">
-                        <button class="filter-btn active"><i class="fas fa-futbol"></i> Futebol</button>
-                        <button class="filter-btn"><i class="fas fa-basketball-ball"></i> Basquete</button>
-                        <button class="filter-btn"><i class="fas fa-tennis-ball"></i> Tênis</button>
-                        <button class="filter-btn"><i class="fas fa-volleyball-ball"></i> Vôlei</button>
-                        <button class="more-btn">Mais... <i class="fas fa-chevron-down"></i></button>
-                    </div>
-                </div>
-                
-                <div class="events-grid">
-                    <div class="event-item">
-                        <i class="fas fa-futbol"></i>
-                        <span>Brasileirão Betano</span>
-                    </div>
-                    <div class="event-item">
-                        <i class="fas fa-futbol"></i>
-                        <span>Copa do Brasil</span>
-                    </div>
-                    <div class="event-item">
-                        <i class="fas fa-futbol"></i>
-                        <span>Copa Libertadores</span>
-                    </div>
-                    <div class="event-item">
-                        <i class="fas fa-basketball-ball"></i>
-                        <span>NBB</span>
-                    </div>
-                    <div class="event-item">
-                        <i class="fas fa-futbol"></i>
-                        <span>MLB</span>
-                    </div>
-                </div>
-                
-                <a href="#" class="view-all-link">Todos os eventos</a>
-            </div>
-
-            <div class="upcoming-matches">
-                <div class="section-header">
-                    <span>Próximas partidas</span>
-                </div>
-                
-                <div class="upcoming-match">
-                    <div class="match-info">
-                        <div class="league-info">
-                            <i class="fas fa-futbol"></i>
-                            <span>🇩🇰 Dinamarca / Copa Landspokal</span>
-                        </div>
-                        <div class="match-time">Hoje, 09 Set<br>13:00</div>
-                        <div class="teams">AB Copenhagen 🆚 B93</div>
-                    </div>
-                    <div class="odds-preview">
-                        <span class="odd">3.05</span>
-                        <span class="odd">3.34</span>
-                        <span class="odd">2.11</span>
-                        <span class="more-odds">+2</span>
-                    </div>
-                </div>
-            </div>
-        </main>
+            <h1>Jogos de Hoje, 8 de Outubro de 2025</h1>
+            </main>
     </div>
 
-    <script src="/public/js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

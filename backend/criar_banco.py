@@ -3,7 +3,7 @@
 import sqlite3
 import os
 
-# Define a estrutura de pastas e o nome do arquivo
+# Define a estrutura de pastas e o nome do arquivo a partir da raiz do projeto
 DB_FOLDER = os.path.join("backend", "database")
 DB_NAME = os.path.join(DB_FOLDER, "checkodds.db")
 
@@ -43,6 +43,7 @@ SQL_CREATE_TABLES = [
 def create_database():
     """Cria a estrutura de pastas e o banco de dados com as tabelas."""
     try:
+        # Garante que a estrutura de pastas exista
         os.makedirs(DB_FOLDER, exist_ok=True)
         
         conn = sqlite3.connect(DB_NAME)
